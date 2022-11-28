@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import About from './componets/About';
-import Nav from './componets/Nav'; 
-import Gallery from './componets/Gallery';
+import Nav from './components/Nav';
+import About from './components/About';
+import Gallery from './components/Gallery';
 
 function App() {
   const [categories] = useState([
@@ -12,16 +12,17 @@ function App() {
     { name: 'portraits', description: 'Portraits of people in my life' },
     { name: 'food', description: 'Delicious delicacies' },
     { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
-  ]);
+  ]); 
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
+
   return (
     <div>
       <Nav
         categories={categories}
         setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}
-        ></Nav>
+      ></Nav>
       <main>
         <Gallery currentCategory={currentCategory}></Gallery>
         <About></About>
